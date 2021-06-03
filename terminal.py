@@ -11,5 +11,5 @@ class Terminal:
 
 
     def __str__(self):
-        return f"Terminal ({self.symbol})"
+        return f'Terminal ("{self.symbol}")'
 

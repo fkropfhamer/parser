@@ -17,6 +17,12 @@ class TestNonTerminal(unittest.TestCase):
         self.assertNotEqual(non_terminal1, non_terminal3)
 
 
+    def test_str(self):
+        non_terminal = NonTerminal("TEST")
+
+        self.assertEqual(str(non_terminal), 'NonTerminal ("TEST")')
+
+
 if __name__ == '__main__':
     unittest.main()
 

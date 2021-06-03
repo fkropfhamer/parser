@@ -21,6 +21,22 @@ class TestProductionRule(unittest.TestCase):
         self.assertEqual(production_rule.right_side, [Terminal("Thomas")])
 
 
+    def test_str(self):
+        production_rule = ProductionRule.from_string("S -> NP VP")
+        self.assertEqual(str(production_rule), "S -> NP VP")
+
+
+    def test_equals(self):
+        production_rule1 = ProductionRule.from_string("S -> NP VP")
+        production_rule2 = ProductionRule.from_string("S -> NP VP")
+        production_rule3 = ProductionRule.from_string('N -> "Thomas"')
+
+        self.assertIsNot(production_rule1, production_rule2)
+        self.assertEqual(production_rule1, production_rule2)
+        self.assertEqual(production_rule1, production_rule1)
+        self.assertNotEqual(production_rule1, production_rule3)
+        
+
 if __name__ == '__main__':
     unittest.main()
 

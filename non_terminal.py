@@ -10,6 +10,6 @@ class NonTerminal:
 
 
     def __str__(self):
-        return f"NonTerminal ({self.name})"
+        return f'NonTerminal ("{self.name}")'
 
 

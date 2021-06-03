@@ -24,5 +24,14 @@ class ProductionRule:
 
         return cls(left_side, right_side)
 
+    def __str__(self):
+        right_side_string = ' '.join([f'"{x.symbol}"' if isinstance(x, Terminal) else x.name for x in self.right_side])
+
+        return f'{self.left_side.name} -> {right_side_string}'
 
 
+    def __eq__(self, other):
+        if isinstance(other, ProductionRule):
+            return (self.left_side == other.left_side) and (self.right_side == other.right_side)
+
+        return False

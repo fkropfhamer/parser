@@ -17,6 +17,12 @@ class TestTerminal(unittest.TestCase):
         self.assertNotEqual(terminal1, terminal3)
 
 
+    def test_str(self):
+        terminal = Terminal("test")
+
+        self.assertEqual(str(terminal), 'Terminal ("test")')
+
+
 if __name__ == '__main__':
     unittest.main()
 
