@@ -35,3 +35,11 @@ class ProductionRule:
             return (self.left_side == other.left_side) and (self.right_side == other.right_side)
 
         return False
+
+
+    def is_left_recursive(self):
+        return self.left_side == self.right_side[0]
+
+
+    def is_right_recursive(self):
+        return self.left_side == self.right_side[-1]
